@@ -46,6 +46,21 @@ function calculateFromProfessionalFee() {
 
 }
 
+function calculateFromGovtFee() {
+
+    const payment = Number(priceInput.value) || 0;
+    const governmentFee = Number(govtFeeInput.value) || 0;
+
+    const professionalFee = payment - governmentFee;
+    const gst = professionalFee * 0.18;
+    const total = payment + gst;
+
+    feeInput.value = professionalFee.toFixed(2);
+    gstInput.value = gst.toFixed(2);
+    totalInput.value = total.toFixed(2);
+
+}
+
 function calculateFromGST() {
     const governmentFee = Number(govtFeeInput.value) || 0;
     const gst = Number(gstInput.value) || 0;
@@ -78,7 +93,7 @@ priceInput.addEventListener("input", calculateFromPayment);
 
 feeInput.addEventListener("input", calculateFromProfessionalFee);
 
-govtFeeInput.addEventListener("input", calculateFromProfessionalFee);
+govtFeeInput.addEventListener("input", calculateFromGovtFee);
 
 gstInput.addEventListener("input", calculateFromGST);
 
