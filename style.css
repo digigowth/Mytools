@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow: hidden;
+    position: relative;
+
+    background: linear-gradient(135deg,
+            #ffffff 0%,
+            #eef7ff 35%,
+            #f4efff 70%,
+            #ffffff 100%);
+}
+
+/* Floating Gradient Blobs */
+
+body::before,
+body::after {
+
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    animation: float 12s ease-in-out infinite;
+
+}
+
+body::before {
+
+    background: #b9d8ff;
+    opacity: .45;
+
+    top: -100px;
+    left: -100px;
+
+}
+
+body::after {
+
+    background: #dcc7ff;
+    opacity: .40;
+
+    bottom: -100px;
+    right: -100px;
+
+    animation-delay: 5s;
+
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+}
+
+/* Glass Container */
+
+.container {
+
+    width: 100%;
+    max-width: 720px;
+
+    padding: 34px;
+
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, .22);
+
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border: 1px solid rgba(255, 255, 255, .45);
+
+    box-shadow:
+        0 20px 50px rgba(90, 100, 130, .12),
+        inset 0 1px rgba(255, 255, 255, .65);
+
+}
+
+/* Heading */
+
+h1 {
+
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+
+}
+
+.container>p {
+
+    margin-top: 8px;
+    margin-bottom: 24px;
+
+    font-size: 16px;
+
+    color: #64748b;
+
+}
+
+/* Textarea */
+
+textarea {
+
+    width: 100%;
+    height: 220px;
+    resize: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .35);
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, .35);
+    color: #1f2937;
+    font-size: 16px;
+    transition: .3s;
+}
+
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+textarea:focus {
+    background: rgba(255, 255, 255, .26);
+
+    border: 1px solid rgba(255, 255, 255, .6);
+
+    box-shadow:
+        0 0 0 5px rgba(123, 142, 255, .12);
+
+}
+
+/* Buttons */
+
+.buttons {
+
+    display: flex;
+    gap: 14px;
+
+    margin-top: 22px;
+
+}
+
+button {
+
+    flex: 1;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .20);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .35);
+    color: #1f2937;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, .35),
+        0 10px 18px rgba(0, 0, 0, .05);
+
+}
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, .32);
+
+    box-shadow:
+        0 14px 30px rgba(95, 120, 255, .18);
+
+}
+
+/* Stats */
+
+.stats {
+
+    display: flex;
+
+    gap: 16px;
+
+    margin-top: 24px;
+
+}
+
+.stat-card {
+
+    flex: 1;
+
+    text-align: center;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, .20);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .35);
+
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, .35);
+
+}
+
+.stat-card h3 {
+
+    font-size: 30px;
+
+    color: #1f2937;
+
+}
+
+.stat-card p {
+
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color: #64748b;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px) {
+
+    body {
+
+        padding: 20px;
+
+    }
+
+    .container {
+
+        padding: 24px;
+
+    }
+
+    h1 {
+
+        font-size: 30px;
+
+    }
+
+    textarea {
+
+        height: 180px;
+
+    }
+
+    .buttons {
+
+        flex-direction: column;
+
+    }
+
+    .stats {
+
+        flex-direction: column;
+
+    }
+
+}
