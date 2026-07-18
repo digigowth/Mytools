@@ -131,7 +131,7 @@ textarea {
     border-radius: 22px;
     background: rgba(255, 255, 255, .18);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, .35);
+    border: 1px solid rgba(0, 0, 0, 0.35);
     box-shadow:
         inset 0 1px rgba(255, 255, 255, .35);
     color: #1f2937;
@@ -145,11 +145,8 @@ textarea::placeholder {
 
 textarea:focus {
     background: rgba(255, 255, 255, .26);
-
     border: 1px solid rgba(255, 255, 255, .6);
-
-    box-shadow:
-        0 0 0 5px rgba(123, 142, 255, .12);
+    box-shadow: 0 0 0 5px rgba(123, 142, 255, .12);
 
 }
 
